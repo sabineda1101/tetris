@@ -198,10 +198,9 @@ export default function BrickBreaker({ userName, onGameOver, onRestart, onExit }
         audio.volume = 0.2;
         audio.play().catch(() => { });
         audioRef.current = audio;
-      } else {
         audioRef.current.play().catch(() => { });
       }
-    } else if (gameState !== "playing" && audioRef.current) {
+    } else if (audioRef.current) {
       audioRef.current.pause();
     }
     return () => {
